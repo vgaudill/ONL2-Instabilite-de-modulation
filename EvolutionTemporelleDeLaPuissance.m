@@ -26,7 +26,7 @@ hold on
     
     Nb = 1000; % Nombre de points
     z_m = -log(delta_0)/(g_fix); % Fin du tronçon de fibre etudie 
-    Z_fix = [0 : z_max/Nb : z_m];    % abscisse
+    Z_fix = [0 : z_m/Nb : z_m];    % abscisse
     
     delta_fix = delta_0*exp(g_fix*L_0);
     
@@ -44,6 +44,7 @@ hold on
                 P_out = (P_0_fix/(2*n*epsilon_0*c*A_eff)).*(1+delta_fix.*cos(Omega_fix.*t)).^2;
             % Tracer de P_out(t)
                 plot(t*10^9,P_out)
+                set(gca, 'fontsize', 15);
                 title('Evolution temporelle de la puissance lumineuse en fin de fibre')
                 xlabel('temps (ns)')
                 ylabel('P_{out} (W)')

@@ -26,7 +26,7 @@ hold on
     
     Nb = 1000; % Nombre de points
     z_m = -log(delta_0)/(g_fix); % Fin du tronçon de fibre etudie 
-    Z_fix = [0 : z_max/Nb : z_m];    % abscisse
+    Z_fix = [0 : z_m/Nb : z_m];    % abscisse
     
     delta_fix = delta_0*exp(g_fix*L_0);
     
@@ -58,6 +58,7 @@ hold on
                 % Ajout de la courbe 
                     plot(Omega/Omega_max, g)
         end
-        title('Evolution gain lineique')
+        %title('Evolution gain lineique')
+        set(gca, 'fontsize', 15);
         xlabel('Omega')
         ylabel('g (m^{-1})')

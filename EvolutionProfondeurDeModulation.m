@@ -26,7 +26,7 @@ hold on
     
     Nb = 1000; % Nombre de points
     z_m = -log(delta_0)/(g_fix); % Fin du tronçon de fibre etudie 
-    Z_fix = [0 : z_max/Nb : z_m];    % abscisse
+    Z_fix = [0 : z_m/Nb : z_m];    % abscisse
     
     delta_fix = delta_0*exp(g_fix*L_0);
 
@@ -51,6 +51,7 @@ hold on
         % Tracer de delta       
             sprintf('Il faut L_0 = %f km pour avoir delta = 1.',L_0*10^(-3))
             plot(Z./10^3,delta)
+            set(gca, 'fontsize', 15);
             title('Evolution de la profondeur de modulation')
             xlabel('z (km)')
             ylabel('delta (sans dimension)')
