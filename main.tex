@@ -108,28 +108,29 @@
     \section{Évolution du gain linéique en fonction de la fréquence de modulation}
     
         
-        \subsubsection*{Disp.m}\label{Disp}
-             Cette fonction est ma méthode d'implémentation de la dispersion.
+        \subsubsection*{EvolutionGainLineique.m}
+             Cette fonction est ma méthode d'implémentation de l'évolution du gain linéique en fonction de la fréquence de modulation.
+             
+             ~
              
              Entrées :
              \begin{itemize}
-                 \item U\_0 : Profil de l'impulsion en entrée (W$^{1/2}$)
-                 \item Delta\_w : plage de fréquence (Hz)
-                 \item L : Longueur de section de fibre (m)
-                 \item P\_0 : Puissance de l'onde en entrée de la section de fibre étudiée(W)
-                 \item Beta\_2 : dispersion de la vitesse de groupe (s$^2$ * m$^{-1}$)
-                 \item gamma :  Coefficient Non linéaire (W$^{-1}$ * m$^{-1}$)
-                 \item lambda : Longueur d'onde (m)
+                 \item Toutes les constantes liées à la fibre vues dans la section d'introduction.
+                 \item P\_0 : La Puissance moyenne du champ (W)
+                 \item Omega : La plage de fréquence de modulation (Hz) (abscisse)
+                 
              \end{itemize}
-            
+             
+             ~
+             
              Sortie :
              
-            U : profil de l'impulsion en sortie (W$^{-1/2}$)
+            Le graphique du gain linéique en fonction de la fréquence de modulation normalisée par $\Omega_{max} = \frac{\Omega_p}{15000}$.
             
-            \begin{figure}
+            \begin{figure}[h!]
                 \centering
                 \includegraphics{g(omega)}
-                \caption{Évolution du gain linéique en fonction de la fréquence de modulation}
+                \caption{Évolution du gain linéique en fonction de la fréquence de modulation normalisée}
                 \label{delta}
             \end{figure}
     
@@ -138,7 +139,7 @@
     
     \section{Évolution temporelle de l'intensité lumineuse}
     
-        \begin{figure}
+        \begin{figure}[h!]
             \centering
             \includegraphics{delta(z)}
             \caption{Évolution de la profondeur de modulation en fonction de la longueur de fibre étudiée}
