@@ -125,7 +125,7 @@
              
              Sortie :
              
-            Le graphique du gain linéique en fonction de la fréquence de modulation normalisée par $\Omega_{max} = \frac{\Omega_p}{15000}$.
+            Le graphique du gain linéique en fonction de la fréquence de modulation normalisée par $\Omega_{max} = \frac{\Omega_p}{15000}$. Les différentes courbes corespondent aux différentes valeurs de P\_0.
             
             \begin{figure}[h!]
                 \centering
@@ -134,10 +134,31 @@
                 \label{delta}
             \end{figure}
     
+            Plus la puissance est grande, plus la fréquence où le maximum du gain est atteint ses rapproche de $\Omega_{max}$.
     
     \newpage
     
-    \section{Évolution temporelle de l'intensité lumineuse}
+    \section{Évolution de la profondeur de modulation}
+    
+        \subsubsection*{EvolutionProfondeurDeModulation.m}
+             Cette fonction est ma méthode d'implémentation de l'évolution de la profondeur de modulation en fonction de la longueur de fibre étudiée.
+             
+             ~
+             
+             Entrées :
+             \begin{itemize}
+                 \item Toutes les constantes liées à la fibre vues dans la section d'introduction.
+                 \item P\_0 : La Puissance moyenne du champ fixée (W)
+                 \item Omega : La plage de fréquence de modulation (Hz) fixée à $\frac{\Omega}{2\pi} = 5 $ GHz
+                 \item z : La plage d'étude de la fibre (km) (abscisse)
+                 
+             \end{itemize}
+             
+             ~
+             
+             Sortie :
+             
+            Le graphique de la profondeur de modulation en fonction de la longueur de fibre étudiée.
     
         \begin{figure}[h!]
             \centering
@@ -145,5 +166,13 @@
             \caption{Évolution de la profondeur de modulation en fonction de la longueur de fibre étudiée}
             \label{delta}
         \end{figure}
+        
+        Pour une longueur de fibre de $L_0 = -ln(\delta_0)/(g)$ avec g le gain linéique fixé par la fréquence de modulation étudiée et la puissance fixée, on voit que $\delta$(z) = 1.
+        
+    \newpage
+    
+    \section{Évolution temporelle de l'intensité lumineuse}
+        
+        
     
 \end{document}
