@@ -12,9 +12,8 @@ hold on
     n = 1.47;                     % Indice de refraction
     lambda_p = 532 * 10^(-9);     % Longueur d'onde du faisceau (m)
     delta_0 = 0.02;               % Profondeur de modulation initiale
-    
-    Omega_p = 2*pi()*c/lambda_p;  % Frequence du faisceau (Hz)
-    Omega_max = Omega_p/15000;    % Frequence de normalisation (Hz)
+    Omega_p = 2*pi()*c/lambda_p;
+    Omega_max = Omega_p/15000;
     Omega_min = 0;
     
 %%% Constantes indicés fix
