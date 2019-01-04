@@ -1,6 +1,7 @@
 close all
 figure
 hold on
+str = {};
 %%% Constantes
     
     c = 3*10^8;                   % Celerite de la lumiere (m*s^(-1))
@@ -12,23 +13,10 @@ hold on
     n = 1.47;                     % Indice de refraction
     lambda_p = 532 * 10^(-9);     % Longueur d'onde du faisceau (m)
     delta_0 = 0.02;               % Profondeur de modulation initiale
-    Omega_p = 2*pi()*c/lambda_p;
-    Omega_max = Omega_p/15000;
+	
+    Omega_p = 2*pi()*c/lambda_p;  % Frequence du faisceau (Hz)
+    Omega_max = Omega_p/15000;    % Frequence de normalisation (Hz)
     Omega_min = 0;
-    
-%%% Constantes indicés fix
-    P_0_fix = 100*10^(-3); 
-    Omega_c_fix = sqrt(4*gamma*P_0_fix/abs(beta_2)); % Frequence de coupure pour P_0 fixe
-    Omega_fix = 5*10^9 * 2*pi;
-    g_fix = abs(beta_2)*Omega_fix*sqrt(Omega_c_fix^2 - Omega_fix^2)/2;
-    
-    L_0 = -log(delta_0)/(g_fix);
-    
-    Nb = 1000; % Nombre de points
-    z_m = -log(delta_0)/(g_fix); % Fin du tronçon de fibre etudie 
-    Z_fix = [0 : z_m/Nb : z_m];    % abscisse
-    
-    delta_fix = delta_0*exp(g_fix*L_0);
     
 %%% Evolution gain lineique (g)
     
@@ -57,8 +45,10 @@ hold on
                 end
                 % Ajout de la courbe 
                     plot(Omega/Omega_max, g)
+                    str = [str, strcat('P_0 = ', num2str(p*10^3),' mW')]; % incrementation de la legende
         end
-        %title('Evolution gain lineique')
+        title('Evolution gain lineique')
         set(gca, 'fontsize', 15);
         xlabel('Omega Normalise')
         ylabel('g (m^{-1})')
+        legend(str{:})
