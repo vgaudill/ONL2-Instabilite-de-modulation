@@ -60,5 +60,5 @@ hold on
         end
         %title('Evolution gain lineique')
         set(gca, 'fontsize', 15);
-        xlabel('Omega')
+        xlabel('Omega Normalise')
         ylabel('g (m^{-1})')
